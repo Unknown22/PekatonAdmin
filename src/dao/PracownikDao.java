@@ -1,6 +1,7 @@
 package dao;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -51,12 +52,57 @@ public class PracownikDao {
 	public Pracownik getPracownikByID(int id) {
 
 		Pracownik pracownik = new Pracownik();
+		
+		try {
+
+			Statement statement = connection.createStatement();
+			ResultSet rs = statement.executeQuery("select * from pracownik where pracownik.id =" + id);
+
+			while (rs.next()) {
+
+				pracownik = new Pracownik(rs.getInt("id"), 
+											rs.getString("login"), 
+											rs.getString("haslo"),
+											rs.getString("stanowisko"),
+											rs.getInt("doswiadczenie")
+													);
+
+			}
+
+		} catch (SQLException e) {
+			System.out.println("Blad przy pobieraniu pracownika o id: " + id );
+//			e.printStackTrace();
+			return pracownik;
+		}
 
 		return pracownik;
 	}
 
-	public boolean addPracownik(int id, String login, String haslo, String stanowisko) {
-
+	public boolean addPracownik(Pracownik pracownik) {
+		/*INSERT INTO `pracownik` (`id`, `login`, `haslo`, `stanowisko`, `doswiadczenie`)
+		VALUES (NULL, 'Yasiu', 'yasiu', 'Java Full Stack Developer with A lot of Money', '99');
+		*/
+		
+		try {
+			PreparedStatement ps = connection.prepareStatement(
+					"INSERT INTO `pracownik` "
+					+ "(`id`, `login`, `haslo`, `stanowisko`, `doswiadczenie`)"
+					+ " VALUES "
+					+ "(NULL, ?, ?, ?, ?);");
+			
+			
+			ps.setString(1, pracownik.getLogin());
+			ps.setString(2, pracownik.getHaslo());
+			ps.setString(3, pracownik.getStanowisko());
+						
+			ps.executeUpdate(); 
+			
+		} catch (SQLException e) {
+			System.out.println("Blad przy dodaniu " + pracownik.toString());
+			e.printStackTrace();
+			return false;
+		}
+		
 		return true;
 	}
 

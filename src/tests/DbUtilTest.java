@@ -13,6 +13,7 @@ public class DbUtilTest {
 
 		DbUtil db = new DbUtil();
 		assertNotNull(db.getConnection());
+		System.out.println("-----\n");
 
 	}
 
