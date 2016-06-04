@@ -12,6 +12,7 @@ import model.Pracownik;
 
 public class PracownikDaoTests {
 
+	
 	@Test
 	public void getPracownikAll() {
 
@@ -47,6 +48,27 @@ public class PracownikDaoTests {
 		System.out.println("-----\n");
 
 
+	}
+	
+	@Test
+	public void addPracownik(){
+		System.out.println("***TEST - addPracownik" );
+
+		PracownikDao dao = new PracownikDao();
+
+		Pracownik pracownik = new Pracownik(99, "Mateosz", "mateosz", "tester", 98);
+		
+		boolean result = dao.addPracownik(pracownik);
+		
+		assert(result);
+		
+		if(result)
+			System.out.println("Dodano poprawnie " + pracownik);
+		else
+			System.out.println("Nie mozna dodac: " + pracownik);
+		System.out.println("-----\n");
+		
+		
 	}
 
 }

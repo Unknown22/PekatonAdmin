@@ -94,6 +94,7 @@ public class PracownikDao {
 			ps.setString(1, pracownik.getLogin());
 			ps.setString(2, pracownik.getHaslo());
 			ps.setString(3, pracownik.getStanowisko());
+			ps.setInt(4, pracownik.getExp());
 						
 			ps.executeUpdate(); 
 			
