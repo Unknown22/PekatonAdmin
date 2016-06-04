@@ -1,0 +1,10 @@
+/build/
+/*.classpath
+/*.project
+/.settings/*.jsdtscope
+/.settings/*.prefs
+/.settings/*.component
+/.settings/*.xml
+/.settings/*.container
+/.settings/*.name
+/WebContent/META-INF/*.MF
