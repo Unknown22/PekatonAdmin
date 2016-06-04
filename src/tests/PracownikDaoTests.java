@@ -69,7 +69,7 @@ public class PracownikDaoTests {
 
 	@Test
 	public void deletePracownikByID() {
-		int id = 5;
+		int id = 1;
 		System.out.println("***TEST - deletePracownikById: " + id);
 
 		PracownikDao dao = new PracownikDao();

@@ -58,7 +58,7 @@
 										</c:if>
 										
 										<c:if test="${zadanie.status == 2}">
-										<td class="label-success"><c:out value="Wykonane" /></td>
+										<td class="label-success"><c:out value="Zakonczone" /></td>
 										</c:if>
 										
 										<td class="center">
