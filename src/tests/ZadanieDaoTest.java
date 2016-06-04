@@ -162,7 +162,7 @@ public class ZadanieDaoTest {
 		System.out.println("***TEST - addZadanie ");
 
 		ZadanieDao dao = new ZadanieDao();
-		Zadanie zadanie = new Zadanie(0, "Opis Testowy", 2, "Krzyzszof", 0, 0);
+		Zadanie zadanie = new Zadanie(0, "Opis Testowy", 2, "Krzyzszof", 0, 0, 1, "", "");
 
 		boolean result = dao.addZadanie(zadanie);
 
@@ -181,7 +181,7 @@ public class ZadanieDaoTest {
 		System.out.println("***TEST - editZadanie ");
 
 		ZadanieDao dao = new ZadanieDao();
-		Zadanie zadanie = new Zadanie(5, "Opis Testowy", 2, "Krzyzszof", 0, 0);
+		Zadanie zadanie = new Zadanie(4, "Opis Testow2222y", 2, "Krzyz123123szof", 0, 0, 3, "", "");
 
 		boolean result = dao.editZadanie(zadanie);
 

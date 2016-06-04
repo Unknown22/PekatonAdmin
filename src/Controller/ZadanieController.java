@@ -100,7 +100,7 @@ public class ZadanieController extends HttpServlet {
 			System.out.println(paramValue);
 		}
 		
-		zadanie = new Zadanie(0, request.getParameter("opis"), Integer.parseInt(request.getParameter("doswiadczenie")), request.getParameter("zleceniodawca"), 0, 0);
+		//zadanie = new Zadanie(0, request.getParameter("opis"), Integer.parseInt(request.getParameter("doswiadczenie")), request.getParameter("zleceniodawca"), 0, 0);
 		
 		dao = new ZadanieDao();
 		

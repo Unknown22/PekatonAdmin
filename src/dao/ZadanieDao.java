@@ -10,6 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
 
 
 public class ZadanieDao {
@@ -69,9 +70,9 @@ public class ZadanieDao {
 		
 		try {
 			PreparedStatement ps = connection.prepareStatement(
-					"INSERT INTO `zadanie` (`id`, `opis`, `doswiadczenie`, `zleceniodawca`, `id_pracownika`, `status`) "
+					"INSERT INTO `zadanie` (`id`, `opis`, `doswiadczenie`, `zleceniodawca`, `id_pracownika`, `status`, `id_sprint`) "
 					+ "VALUES "
-					+ "(NULL, ?, ?, ?, NULL, ?)"
+					+ "(NULL, ?, ?, ?, NULL, ?, ?)"
 					);
 			
 			
@@ -79,6 +80,7 @@ public class ZadanieDao {
 			ps.setInt(2, zadanie.getDoswiadczenie());
 			ps.setString(3, zadanie.getZleceniodawca());
 			ps.setInt(4, zadanie.getStatus());
+			ps.setInt(5, zadanie.getIdSprintu());
 						
 			ps.executeUpdate(); 
 			
@@ -134,7 +136,21 @@ public class ZadanieDao {
 												rs.getInt("doswiadczenie"),
 												rs.getString("zleceniodawca"),
 												rs.getInt("id_pracownika"),
-												rs.getInt("status"));
+												rs.getInt("status"),
+												rs.getInt("id_sprint"),
+												"",
+												""
+												);
+				Statement statement2 = connection.createStatement();
+				ResultSet rs2 = statement2.executeQuery("SELECT * FROM sprint WHERE id =" + rs.getInt("id_sprint") + ";");
+				
+				while(rs2.next()){
+					zadanie.setPoczatekSprintu(new SimpleDateFormat("dd/MM/yyyy").format(rs2.getTimestamp("poczatek")));
+					zadanie.setKoniecSprintu(new SimpleDateFormat("dd/MM/yyyy").format(rs2.getTimestamp("koniec")));
+				}
+				
+				
+				
 				zadania.add(zadanie);
 			}
 			
@@ -159,8 +175,19 @@ public class ZadanieDao {
 												rs.getInt("doswiadczenie"),
 												rs.getString("zleceniodawca"), 
 												rs.getInt("id_pracownika"), 
-												rs.getInt("status")
+												rs.getInt("status"),
+												rs.getInt("id_sprint"),
+												"",
+												""
 												);
+				Statement statement2 = connection.createStatement();
+				ResultSet rs2 = statement2.executeQuery("SELECT * FROM sprint WHERE id =" + rs.getInt("id_sprint") + ";");
+				
+				while(rs2.next()){
+					zadanie.setPoczatekSprintu(new SimpleDateFormat("dd/MM/yyyy").format(rs2.getTimestamp("poczatek")));
+					zadanie.setKoniecSprintu(new SimpleDateFormat("dd/MM/yyyy").format(rs2.getTimestamp("koniec")));
+				}
+				
 				zadania.add(zadanie);
 			}
 
@@ -186,8 +213,19 @@ public class ZadanieDao {
 												rs.getInt("doswiadczenie"),
 												rs.getString("zleceniodawca"), 
 												rs.getInt("id_pracownika"), 
-												rs.getInt("status")
+												rs.getInt("status"),
+												rs.getInt("id_sprint"),
+												"",
+												""
 												);
+				Statement statement2 = connection.createStatement();
+				ResultSet rs2 = statement2.executeQuery("SELECT * FROM sprint WHERE id =" + rs.getInt("id_sprint") + ";");
+				
+				while(rs2.next()){
+					zadanie.setPoczatekSprintu(new SimpleDateFormat("dd/MM/yyyy").format(rs2.getTimestamp("poczatek")));
+					zadanie.setKoniecSprintu(new SimpleDateFormat("dd/MM/yyyy").format(rs2.getTimestamp("koniec")));
+				}
+				
 				zadania.add(zadanie);
 			}
 

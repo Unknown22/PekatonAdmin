@@ -10,10 +10,31 @@ public class Zadanie {
 	private int status = 0;
 	/*
 	 * status
-	 * 1 - zakonczone
+	 * 0 - niewykonane/przypisane
+	 * 1 - do weryfikacji
+	 * 2 - zakonczone
 	 */
+	private int idSprintu = 0;
 	
-	
+	public Zadanie(int id, String opis, int doswiadczenie, String zleceniodawca, int ipPracownika, int status,
+			int idSprintu, String poczatekSprintu, String koniecSprintu) {
+		super();
+		this.id = id;
+		this.opis = opis;
+		this.doswiadczenie = doswiadczenie;
+		this.zleceniodawca = zleceniodawca;
+		this.ipPracownika = ipPracownika;
+		this.status = status;
+		this.idSprintu = idSprintu;
+		this.poczatekSprintu = poczatekSprintu;
+		this.koniecSprintu = koniecSprintu;
+	}
+
+
+
+
+	private String poczatekSprintu = "";
+	private String koniecSprintu = "";
 	
 	public String getOpis() {
 		return opis;
@@ -28,15 +49,8 @@ public class Zadanie {
 
 
 
-	public Zadanie(int id, String opis, int doswiadczenie, String zleceniodawca, int ipPracownika, int status) {
-		super();
-		this.id = id;
-		this.opis = opis;
-		this.doswiadczenie = doswiadczenie;
-		this.zleceniodawca = zleceniodawca;
-		this.ipPracownika = ipPracownika;
-		this.status = status;
-	}
+
+
 	public void setOpis(String opis) {
 		this.opis = opis;
 	}
@@ -66,14 +80,57 @@ public class Zadanie {
 	}
 	@Override
 	public String toString() {
-		return "Zadanie [opis=" + opis + ", doswiadczenie=" + doswiadczenie + ", zleceniodawca=" + zleceniodawca
-				+ ", ipPracownika=" + ipPracownika + ", status=" + status + "]";
+		return "Zadanie [id=" + id + ", opis=" + opis + ", doswiadczenie=" + doswiadczenie + ", zleceniodawca="
+				+ zleceniodawca + ", ipPracownika=" + ipPracownika + ", status=" + status + ", idSprintu=" + idSprintu
+				+ ", poczatekSprintu=" + poczatekSprintu + ", koniecSprintu=" + koniecSprintu + "]";
 	}
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
+	}
+
+
+
+
+	public String getPoczatekSprintu() {
+		return poczatekSprintu;
+	}
+
+
+
+
+	public void setPoczatekSprintu(String poczatekSprintu) {
+		this.poczatekSprintu = poczatekSprintu;
+	}
+
+
+
+
+	public String getKoniecSprintu() {
+		return koniecSprintu;
+	}
+
+
+
+
+	public void setKoniecSprintu(String koniecSprintu) {
+		this.koniecSprintu = koniecSprintu;
+	}
+
+
+
+
+	public int getIdSprintu() {
+		return idSprintu;
+	}
+
+
+
+
+	public void setIdSprintu(int idSprintu) {
+		this.idSprintu = idSprintu;
 	}
 	
 	

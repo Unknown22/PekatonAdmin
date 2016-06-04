@@ -26,6 +26,8 @@
 										<th>Doswiadczenie</th>
 										<th>Zleceniodawca</th>
 										<th>Osoba odpowiedzialna</th>
+										<th>Poczatek Sprintu</th>
+										<th>Koniec Sprintu</th>
 										<th>Status</th>
 										<th>Akcje</th>
 									</tr>
@@ -38,6 +40,8 @@
 										<td class="center"><c:out value="${zadanie.doswiadczenie}" /></td>
 										<td class="center"><c:out value="${zadanie.zleceniodawca}" /></td>
 										<td class="center"><c:out value="${zadanie.ipPracownika}" /></td>
+										<td class="center"><c:out value="${zadanie.poczatekSprintu}" /></td>
+										<td class="center"><c:out value="${zadanie.koniecSprintu}" /></td>
 										
 										<c:if test="${zadanie.status == 0}">
 										<td class="label-pill label-warning"><c:out value="Niewykonane" /></td>

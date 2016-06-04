@@ -98,7 +98,7 @@ public class PracownikController extends HttpServlet {
 			System.out.println(paramValue);
 		}
 		
-		pracownik = new Pracownik(0, request.getParameter("login"), request.getParameter("haslo"), request.getParameter("stanowisko"), 0);
+		pracownik = new Pracownik(0, request.getParameter("login"), request.getParameter("haslo"), request.getParameter("stanowisko"), 0, "");
 		dao = new PracownikDao();
 		
 		boolean result = dao.addPracownik(pracownik);
