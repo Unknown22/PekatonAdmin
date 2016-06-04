@@ -24,6 +24,41 @@ public class ZadanieDao {
 	}
 	
 	
+//	public List<Zadanie> getZadaniaAll(){
+//		
+//	}
+//	
+//	public List<Zadanie> getZadaniaByStatus(){
+//		
+//	}
+//	
+//	public boolean addZadanie(Zadanie zadanie){
+//		
+//	}
+	
+	public boolean deleteZadanieByID(int id){
+		try {
+            PreparedStatement preparedStatement = connection
+                    .prepareStatement("delete from zadanie where zadanie.id = ?");
+            // Parameters start with 1
+            preparedStatement.setInt(1, id);
+            preparedStatement.executeUpdate();
+
+        } catch (SQLException e) {
+        	System.err.println("Blad przy usuwaniu zadania id: " +id);
+           // e.printStackTrace();
+            return false;
+        }
+        		
+		return true;
+		
+	}
+	
+//	public boolean editZadanie(Zadanie zadanie){
+//		
+//	}
+	
+	
 	public List<Zadanie> getZadaniaByPracownikId(int id){
 		List<Zadanie> zadania = new ArrayList<Zadanie>();
 		
