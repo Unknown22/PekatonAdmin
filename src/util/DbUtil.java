@@ -13,14 +13,14 @@ public class DbUtil {
 	private static Connection connection = null;
 
 	public static Connection getConnection() {
-		System.out.println("DB connection checking");
+		//System.out.println("DB connection checking");
 		if (connection != null)
 			return connection;
 
 		else {
-			System.out.println("DB connection creating");
+			//System.out.println("DB connection creating");
 			try {
-				System.out.println("DB properties loading");
+				//System.out.println("DB properties loading");
 
 				Properties prop = new Properties();
 				InputStream inputStream = DbUtil.class.getClassLoader().getResourceAsStream("db.properties");
