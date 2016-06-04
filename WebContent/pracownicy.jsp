@@ -34,12 +34,11 @@
 								<tbody>
 									<c:forEach items="${pracownicy}" var="pracownik">
 									<tr>
-										<td>1</td>
+										
 										<td class="center"><c:out value="${pracownik.id}" /></td>
 										<td class="center"><c:out value="${pracownik.login}" /></td>
 										<td class="center"><c:out value="${pracownik.haslo}" /></td>
 										<td class="center"><c:out value="${pracownik.stanowisko}" /></td>
-										<td class="center"><c:out value="${pracownik.exp}" /></td>
 										<td class="center">
 											<a class="btn btn-success" href="#">
 												<i class="halflings-icon white zoom-in"></i>

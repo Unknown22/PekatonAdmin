@@ -23,20 +23,20 @@
 									<div class="control-group">
 										<label class="control-label" >Opis</label>
 										<div class="controls">
-											<input class="input-xlarge focused" id="focusedInput" type="text" rows="2" value="...">
+											<input class="input-xlarge focused" name="opis" id="focusedInput" type="text" rows="2" value="...">
 										</div>
 									</div>
 									
 									<div class="control-group">
 										<label class="control-label" >Doswiadczenie</label>
 										<div class="controls">
-											<input class="input-xlarge focused" id="focusedInput" type="number" min="0" max="20" value="0">
+											<input class="input-xlarge focused" name="doswiadczenie" id="focusedInput" type="number" min="0" max="20" value="0">
 										</div>
 									</div>
 									<div class="control-group">
 										<label class="control-label" >Zleceniodawca</label>
 										<div class="controls">
-											<input class="input-xlarge focused" id="focusedInput" type="text" value="...">
+											<input class="input-xlarge focused" name="zleceniodawca" id="focusedInput" type="text" value="...">
 										</div>
 									</div>
 									

@@ -54,7 +54,7 @@ public class PracownikDaoTests {
 
 		PracownikDao dao = new PracownikDao();
 
-		Pracownik pracownik = new Pracownik(99, "Mateosz", "mateosz", "tester", 98);
+		Pracownik pracownik = new Pracownik(991, "Mateosz1", "mateosz1", "tester1", 918, " ");
 
 		boolean result = dao.addPracownik(pracownik);
 

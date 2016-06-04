@@ -7,6 +7,7 @@ public class Pracownik {
 	private String haslo = "";
 	private String stanowisko = "";
 	private int doswiadczenie = 0;
+	private String dataZatrudnienia = "";
 	
 	
 	
@@ -16,14 +17,23 @@ public class Pracownik {
 	
 	
 	
-	public Pracownik(int id, String login, String haslo, String stanowisko, int exp) {
+	
+
+
+
+	public Pracownik(int id, String login, String haslo, String stanowisko, int doswiadczenie, String dataZatrudnienia) {
 		super();
 		this.id = id;
 		this.login = login;
 		this.haslo = haslo;
 		this.stanowisko = stanowisko;
-		this.doswiadczenie = exp;
+		this.doswiadczenie = doswiadczenie;
+		this.dataZatrudnienia = dataZatrudnienia;
 	}
+
+
+
+
 
 
 
@@ -61,10 +71,38 @@ public class Pracownik {
 		this.doswiadczenie = exp;
 	}
 	
+	
+
+
+
+	public int getDoswiadczenie() {
+		return doswiadczenie;
+	}
+
+
+
+	public void setDoswiadczenie(int doswiadczenie) {
+		this.doswiadczenie = doswiadczenie;
+	}
+
+
+
+	public String getDataZatrudnienia() {
+		return dataZatrudnienia;
+	}
+
+
+
+	public void setDataZatrudnienia(String dataZatrudnienia) {
+		this.dataZatrudnienia = dataZatrudnienia;
+	}
+
+
+
 	@Override
 	public String toString() {
-		return "Pracownik [id=" + id + ", login=" + login + ", haslo=" + haslo + ", stanowisko=" + stanowisko + ", exp="
-				+ doswiadczenie + "]";
+		return "Pracownik [id=" + id + ", login=" + login + ", haslo=" + haslo + ", stanowisko=" + stanowisko
+				+ ", doswiadczenie=" + doswiadczenie + ", dataZatrudnienia=" + dataZatrudnienia + "]";
 	}
 	
 	

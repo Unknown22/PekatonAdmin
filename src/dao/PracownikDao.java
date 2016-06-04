@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,7 +34,8 @@ public class PracownikDao {
 													rs.getString("login"), 
 													rs.getString("haslo"),
 													rs.getString("stanowisko"),
-													rs.getInt("doswiadczenie")
+													rs.getInt("doswiadczenie"),
+													new SimpleDateFormat("dd/MM/yyyy").format(rs.getTimestamp("data_zatrudnienia")) 
 													);
 
 				pracownicy.add(pracownik);
@@ -64,7 +66,8 @@ public class PracownikDao {
 											rs.getString("login"), 
 											rs.getString("haslo"),
 											rs.getString("stanowisko"),
-											rs.getInt("doswiadczenie")
+											rs.getInt("doswiadczenie"),
+											new SimpleDateFormat("dd/MM/yyyy").format(rs.getTimestamp("data_zatrudnienia")) 
 													);
 
 			}
@@ -86,9 +89,9 @@ public class PracownikDao {
 		try {
 			PreparedStatement ps = connection.prepareStatement(
 					"INSERT INTO `pracownik` "
-					+ "(`id`, `login`, `haslo`, `stanowisko`, `doswiadczenie`)"
+					+ "(`id`, `login`, `haslo`, `stanowisko`, `doswiadczenie`, `data_zatrudnienia`)"
 					+ " VALUES "
-					+ "(NULL, ?, ?, ?, ?);");
+					+ "(NULL, ?, ?, ?, ?, CURRENT_TIMESTAMP);");
 			
 			
 			ps.setString(1, pracownik.getLogin());
