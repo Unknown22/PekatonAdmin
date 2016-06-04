@@ -12,7 +12,6 @@ import model.Pracownik;
 
 public class PracownikDaoTests {
 
-	
 	@Test
 	public void getPracownikAll() {
 
@@ -47,25 +46,68 @@ public class PracownikDaoTests {
 			System.out.println("Nie ma pracownika o id: " + id);
 		System.out.println("-----\n");
 
-
 	}
-	
+
 	@Test
-	public void addPracownik(){
-		System.out.println("***TEST - addPracownik" );
+	public void addPracownik() {
+		System.out.println("***TEST - addPracownik");
 
 		PracownikDao dao = new PracownikDao();
 
 		Pracownik pracownik = new Pracownik(99, "Mateosz", "mateosz", "tester", 98);
-		
+
 		boolean result = dao.addPracownik(pracownik);
-		
-		assert(result);
-		
-		if(result)
+
+		assert (result);
+
+		if (result)
 			System.out.println("Dodano poprawnie " + pracownik);
 		else
 			System.out.println("Nie mozna dodac: " + pracownik);
+		System.out.println("-----\n");
+	}
+
+	@Test
+	public void deletePracownikByID() {
+		int id = 5;
+		System.out.println("***TEST - deletePracownikById: " + id);
+
+		PracownikDao dao = new PracownikDao();
+
+		boolean result = dao.deletePracownik(id);
+
+		assert (result);
+
+		if (result)
+			System.out.println("Usunieto pracownika o id: " + id);
+		else
+			System.out.println("Nie mozna usunac pracownika o id: " + id);
+		System.out.println("-----\n");
+
+	}
+	
+	@Test
+	public void editPracownik(){
+		
+		int id = 2;
+		System.out.println("***TEST - editPracownik id: " + id);
+
+		PracownikDao dao = new PracownikDao();
+
+		Pracownik pracownik = new Pracownik();
+		pracownik = dao.getPracownikByID(id);
+
+		pracownik.setLogin(pracownik.getLogin() + "EDIT");
+		pracownik.setStanowisko(pracownik.getStanowisko() + "EDIT");
+		
+		boolean result = dao.editPracownik(pracownik);
+
+		assert (result);
+
+		if (result)
+			System.out.println("Edytowano poprawnie " + pracownik);
+		else
+			System.out.println("Nie mozna edytowac: " + pracownik);
 		System.out.println("-----\n");
 		
 		

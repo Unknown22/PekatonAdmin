@@ -49,6 +49,9 @@ public class Pracownik {
 		return stanowisko;
 	}
 	public void setStanowisko(String stanowisko) {
+		if(stanowisko.length() > 49 )
+			stanowisko = stanowisko.substring(0, 49);
+		
 		this.stanowisko = stanowisko;
 	}
 	public int getExp() {

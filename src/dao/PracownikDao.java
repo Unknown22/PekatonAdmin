@@ -107,8 +107,49 @@ public class PracownikDao {
 		return true;
 	}
 
-	public boolean editPracownik(int id, String login, String haslo, String stanowisko, int doswiadczenie) {
+	public boolean editPracownik(Pracownik pracownik) {
+		/*
+		 * UPDATE `pracownik` SET `login` = 'Nadia Romanova', `haslo` = 'nadia1', `stanowisko` = 'Testowe1', `doswiadczenie` = '1' WHERE `pracownik`.`id` = 1
+		 */
+		try {
+			PreparedStatement ps = connection.prepareStatement(
+					"UPDATE `pracownik` "
+					+ "SET `login` = ?, `haslo` = ?, "
+					+ "`stanowisko` = ?, `doswiadczenie` = ? "
+					+ "WHERE `pracownik`.`id` = ?");
+			
+			
+			ps.setString(1, pracownik.getLogin());
+			ps.setString(2, pracownik.getHaslo());
+			ps.setString(3, pracownik.getStanowisko());
+			ps.setInt(4, pracownik.getExp());
+			ps.setInt(5, pracownik.getId());
+						
+			ps.executeUpdate(); 
+			
+		} catch (SQLException e) {
+			System.out.println("Blad przy edytowaniu " + pracownik.toString());
+			e.printStackTrace();
+			return false;
+		}
+		
+		return true;
+	
+	}
+	
+	public boolean deletePracownik(int id){
+		try {
+            PreparedStatement preparedStatement = connection
+                    .prepareStatement("delete from pracownik where pracownik.id = ?");
+            // Parameters start with 1
+            preparedStatement.setInt(1, id);
+            preparedStatement.executeUpdate();
 
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+        		
 		return true;
 	}
 }
