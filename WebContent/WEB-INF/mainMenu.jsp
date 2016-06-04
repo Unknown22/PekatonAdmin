@@ -1,7 +1,7 @@
 <div id="sidebar-left" class="span2">
 				<div class="nav-collapse sidebar-nav">
 					<ul class="nav nav-tabs nav-stacked main-menu">
-						<li><a href="index.jsp"><i class="icon-bar-chart"></i><span class="hidden-tablet"> Ogolne </span></a></li>
+						<li><a href="indexIndex.jsp"><i class="icon-bar-chart"></i><span class="hidden-tablet"> Ogolne </span></a></li>
 						<li>
 							<a class="dropmenu" href="#"><i class="icon-tasks"></i><span class="hidden-tablet"> Zadania</span></a>
 							<ul>

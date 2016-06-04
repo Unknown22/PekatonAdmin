@@ -39,7 +39,13 @@
 										<td class="center"><c:out value="${zadanie.opis}" /></td>
 										<td class="center"><c:out value="${zadanie.doswiadczenie}" /></td>
 										<td class="center"><c:out value="${zadanie.zleceniodawca}" /></td>
-										<td class="center"><c:out value="${zadanie.ipPracownika}" /></td>
+										<c:if test="${zadanie.ipPracownika == ''}">
+											<td class="center"><c:out value="BRAK" /></td>
+										</c:if>
+										<c:if test="${zadanie.ipPracownika != ''}">
+											<td class="center"><c:out value="${zadanie.pracownik}" /></td>
+										</c:if>
+										
 										<td class="center"><c:out value="${zadanie.poczatekSprintu}" /></td>
 										<td class="center"><c:out value="${zadanie.koniecSprintu}" /></td>
 										

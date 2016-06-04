@@ -136,6 +136,7 @@ public class ZadanieDao {
 												rs.getInt("doswiadczenie"),
 												rs.getString("zleceniodawca"),
 												rs.getInt("id_pracownika"),
+												"",
 												rs.getInt("status"),
 												rs.getInt("id_sprint"),
 												"",
@@ -149,6 +150,10 @@ public class ZadanieDao {
 					zadanie.setKoniecSprintu(new SimpleDateFormat("dd/MM/yyyy").format(rs2.getTimestamp("koniec")));
 				}
 				
+				rs2 = statement2.executeQuery("SELECT * FROM pracownik WHERE id =" + rs.getInt("id_pracownika") + ";");
+				while(rs2.next()){
+					zadanie.setPracownik(rs2.getString("login"));
+				}
 				
 				
 				zadania.add(zadanie);
@@ -175,6 +180,7 @@ public class ZadanieDao {
 												rs.getInt("doswiadczenie"),
 												rs.getString("zleceniodawca"), 
 												rs.getInt("id_pracownika"), 
+												"",
 												rs.getInt("status"),
 												rs.getInt("id_sprint"),
 												"",
@@ -187,7 +193,10 @@ public class ZadanieDao {
 					zadanie.setPoczatekSprintu(new SimpleDateFormat("dd/MM/yyyy").format(rs2.getTimestamp("poczatek")));
 					zadanie.setKoniecSprintu(new SimpleDateFormat("dd/MM/yyyy").format(rs2.getTimestamp("koniec")));
 				}
-				
+				rs2 = statement2.executeQuery("SELECT * FROM pracownik WHERE id =" + rs.getInt("id_pracownika") + ";");
+				while(rs2.next()){
+					zadanie.setPracownik(rs2.getString("login"));
+				}
 				zadania.add(zadanie);
 			}
 
@@ -213,6 +222,7 @@ public class ZadanieDao {
 												rs.getInt("doswiadczenie"),
 												rs.getString("zleceniodawca"), 
 												rs.getInt("id_pracownika"), 
+												"",
 												rs.getInt("status"),
 												rs.getInt("id_sprint"),
 												"",
@@ -224,6 +234,10 @@ public class ZadanieDao {
 				while(rs2.next()){
 					zadanie.setPoczatekSprintu(new SimpleDateFormat("dd/MM/yyyy").format(rs2.getTimestamp("poczatek")));
 					zadanie.setKoniecSprintu(new SimpleDateFormat("dd/MM/yyyy").format(rs2.getTimestamp("koniec")));
+				}
+				rs2 = statement2.executeQuery("SELECT * FROM pracownik WHERE id =" + rs.getInt("id_pracownika") + ";");
+				while(rs2.next()){
+					zadanie.setPracownik(rs2.getString("login"));
 				}
 				
 				zadania.add(zadanie);

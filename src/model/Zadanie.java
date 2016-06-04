@@ -7,6 +7,7 @@ public class Zadanie {
 	private int doswiadczenie = 0;
 	private String zleceniodawca;
 	private int ipPracownika = 0;
+	private String pracownik = "";
 	private int status = 0;
 	/*
 	 * status
@@ -16,14 +17,18 @@ public class Zadanie {
 	 */
 	private int idSprintu = 0;
 	
-	public Zadanie(int id, String opis, int doswiadczenie, String zleceniodawca, int ipPracownika, int status,
-			int idSprintu, String poczatekSprintu, String koniecSprintu) {
+
+
+
+	public Zadanie(int id, String opis, int doswiadczenie, String zleceniodawca, int ipPracownika, String pracownik,
+			int status, int idSprintu, String poczatekSprintu, String koniecSprintu) {
 		super();
 		this.id = id;
 		this.opis = opis;
 		this.doswiadczenie = doswiadczenie;
 		this.zleceniodawca = zleceniodawca;
 		this.ipPracownika = ipPracownika;
+		this.pracownik = pracownik;
 		this.status = status;
 		this.idSprintu = idSprintu;
 		this.poczatekSprintu = poczatekSprintu;
@@ -81,8 +86,9 @@ public class Zadanie {
 	@Override
 	public String toString() {
 		return "Zadanie [id=" + id + ", opis=" + opis + ", doswiadczenie=" + doswiadczenie + ", zleceniodawca="
-				+ zleceniodawca + ", ipPracownika=" + ipPracownika + ", status=" + status + ", idSprintu=" + idSprintu
-				+ ", poczatekSprintu=" + poczatekSprintu + ", koniecSprintu=" + koniecSprintu + "]";
+				+ zleceniodawca + ", ipPracownika=" + ipPracownika + ", pracownik=" + pracownik + ", status=" + status
+				+ ", idSprintu=" + idSprintu + ", poczatekSprintu=" + poczatekSprintu + ", koniecSprintu="
+				+ koniecSprintu + "]";
 	}
 	public int getId() {
 		return id;
@@ -131,6 +137,20 @@ public class Zadanie {
 
 	public void setIdSprintu(int idSprintu) {
 		this.idSprintu = idSprintu;
+	}
+
+
+
+
+	public String getPracownik() {
+		return pracownik;
+	}
+
+
+
+
+	public void setPracownik(String pracownik) {
+		this.pracownik = pracownik;
 	}
 	
 	
