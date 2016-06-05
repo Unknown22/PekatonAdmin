@@ -13,7 +13,7 @@
 							<a class="dropmenu" href="#"><i class="icon-time"></i><span class="hidden-tablet"> Sprinty</span></a>
 							<ul>
 								<li><a class="submenu" href="indexSprinty.jsp"><i class="icon-th-list"></i><span class="hidden-tablet"> Przegladaj</span></a></li>
-								<li><a class="submenu" href="#"><i class="icon-plus-sign"></i><span class="hidden-tablet"> Dodaj</span></a></li>
+								<li><a class="submenu" href="sprintAdd.jsp"><i class="icon-plus-sign"></i><span class="hidden-tablet"> Dodaj</span></a></li>
 							</ul>	
 						</li>
 						

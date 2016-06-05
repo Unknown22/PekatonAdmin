@@ -102,21 +102,15 @@ public class SprintController extends HttpServlet {
 			System.out.println(paramValue);
 		}
 		
-		//zadanie = new Zadanie(0, request.getParameter("opis"), Integer.parseInt(request.getParameter("doswiadczenie")), request.getParameter("zleceniodawca"), 0, 0);
+		Sprint sprint = new Sprint(0, request.getParameter("poczatek"), request.getParameter("koniec"));
 		
-//		dao = new ZadanieDao();
-//		
-//		boolean result = dao.addZadanie(zadanie);
-//		
-//		if(result){
-//			System.out.println("DODANO " + zadanie);
-//			response.sendRedirect("indexZadania.jsp");
-//		}
-//		
+		dao = new SprintDao();
+		
+		dao.addSprint(sprint);
 		
 		
 		
-		//doGet(request, response);
+		response.sendRedirect("indexSprinty.jsp");
 	}
 
 	
