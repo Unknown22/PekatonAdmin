@@ -103,6 +103,18 @@ public class ZadanieController extends HttpServlet {
 			request.setAttribute("pracownicy", pracownicy);
 			
 			break;
+			
+		case "verifiedZadanie":
+			showAllParams(request);
+			
+			int idZ = Integer.parseInt(request.getParameter("id"));
+			ZadanieDao daoZad = new ZadanieDao();
+			daoZad.verifyZadanie(idZ);
+			
+			forward = PAGE_ZADANIA_LIST;
+			request.setAttribute("zadania", daoZad.getZadaniaAll());
+			break;
+			
 		default:
 			break;
 		}

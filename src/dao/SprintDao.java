@@ -66,8 +66,6 @@ public class SprintDao {
 					"INSERT INTO `sprint` (`id`, `poczatek`, `koniec`) "
 					+ "VALUES (NULL, ?, ?)");
 			
-			
-			
 			ps.setString(1, sprint.getPoczatek());			
 			
 			ps.setString(2, sprint.getKoniec());
@@ -78,11 +76,10 @@ public class SprintDao {
 			System.err.println("Blad przy dodaniu sprintu " + sprint.toString());
 			e.printStackTrace();
 			return false;
-		}
-		
+		}		
 		return true;
-		
-		
 	}
+	
+
 
 }

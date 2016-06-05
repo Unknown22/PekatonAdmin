@@ -252,6 +252,23 @@ public class ZadanieDao {
 
 
 	}
+	
+	public boolean verifyZadanie(int id){
+		try {
+			PreparedStatement ps = connection.prepareStatement(
+					"UPDATE `zadanie` SET `status`='2' WHERE `id`='"+id+"';");
+			
+			System.out.println(ps + "\n");
+			ps.executeUpdate(); 
+			
+		} catch (SQLException e) {
+			System.err.println("Blad przy zmianie statusu zadania id: " + id);
+			e.printStackTrace();
+			return false;
+		}		
+		return true;
+		
+	}
 
 
 	

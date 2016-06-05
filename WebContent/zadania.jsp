@@ -50,7 +50,7 @@
 										<td class="center"><c:out value="${zadanie.koniecSprintu}" /></td>
 										
 										<c:if test="${zadanie.status == 0}">
-										<td class="label-pill label-warning"><c:out value="Niewykonane" /></td>
+										<td class="label-pill orange"><c:out value="Niewykonane" /></td>
 										</c:if>
 										
 										<c:if test="${zadanie.status == 1}">
@@ -69,7 +69,7 @@
 											</a>
 											
 											<c:if test="${zadanie.status == 1}">
-												<a class="btn btn-success" href="#">
+												<a class="btn btn-success" href="ZadanieController?action=verifiedZadanie&id=<c:out value="${zadanie.id}"/>" > 
 													<i class="halflings-icon white ok"></i>
 												</a>
 											</c:if> 

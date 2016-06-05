@@ -73,6 +73,7 @@ public class SprintController extends HttpServlet {
 			request.setAttribute("sprinty", dao.getSprintAll());
 			break;
 			
+		
 		default:
 			break;
 		}
