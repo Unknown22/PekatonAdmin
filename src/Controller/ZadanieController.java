@@ -171,8 +171,11 @@ public class ZadanieController extends HttpServlet {
 		
 		//zadanie = new Zadanie(0, request.getParameter("opis"), Integer.parseInt(request.getParameter("doswiadczenie")), request.getParameter("zleceniodawca"), 0, 0);
 		
-
-		zadanie = new Zadanie(0, request.getParameter("opis"), Integer.parseInt(request.getParameter("doswiadczenie")), request.getParameter("zleceniodawca"), Integer.parseInt(request.getParameter("pracownikID")), "", 0, 1, "", "");
+		try{
+			zadanie = new Zadanie(0, request.getParameter("opis"), Integer.parseInt(request.getParameter("doswiadczenie")), request.getParameter("zleceniodawca"), Integer.parseInt(request.getParameter("pracownikID")), "", 0, 1, "", "");
+		} catch (Exception e ){
+			zadanie = new Zadanie(0, request.getParameter("opis"), Integer.parseInt(request.getParameter("doswiadczenie")), request.getParameter("zleceniodawca"), 0, "", 0, 1, "", "");
+		}
 		dao = new ZadanieDao();
 		
 		boolean result = dao.addZadanie(zadanie);
