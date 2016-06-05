@@ -24,6 +24,7 @@
 										<th>Login</th>
 										<th>Haslo</th>
 										<th>Stanowisko</th>
+										<th>Doswiadczenie</th>
 										<th>Data zatrudnienia</th>
 										<th>Akcje</th>
 									</tr>
@@ -36,6 +37,7 @@
 										<td class="center"><c:out value="${pracownik.login}" /></td>
 										<td class="center"><c:out value="${pracownik.haslo}" /></td>
 										<td class="center"><c:out value="${pracownik.stanowisko}" /></td>
+										<td class="center"><c:out value="${pracownik.doswiadczenie}" /></td>
 										<td class="center"><c:out value="${pracownik.dataZatrudnienia}" /></td>
 										<td class="center">
 											

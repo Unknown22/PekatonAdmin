@@ -6,7 +6,7 @@ public class Pracownik {
 	private String login = "";
 	private String haslo = "";
 	private String stanowisko = "";
-	private int doswiadczenie = 0;
+	private int doswiadczenie = 1;
 	private String dataZatrudnienia = "";
 	
 	

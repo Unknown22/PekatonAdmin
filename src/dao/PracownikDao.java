@@ -91,13 +91,12 @@ public class PracownikDao {
 					"INSERT INTO `pracownik` "
 					+ "(`id`, `login`, `haslo`, `stanowisko`, `doswiadczenie`, `data_zatrudnienia`)"
 					+ " VALUES "
-					+ "(NULL, ?, ?, ?, ?, CURRENT_TIMESTAMP);");
+					+ "(NULL, ?, ?, ?, 1, CURRENT_TIMESTAMP);");
 			
 			
 			ps.setString(1, pracownik.getLogin());
 			ps.setString(2, pracownik.getHaslo());
 			ps.setString(3, pracownik.getStanowisko());
-			ps.setInt(4, pracownik.getExp());
 						
 			ps.executeUpdate(); 
 			
