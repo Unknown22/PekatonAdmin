@@ -1,1 +1,1 @@
-<jsp:forward page="/ZadanieController?action=getSprintsList" />
+<jsp:forward page="/ZadanieController?action=getSprintsPracownikList" />

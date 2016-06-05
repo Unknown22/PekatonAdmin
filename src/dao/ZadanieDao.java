@@ -72,15 +72,16 @@ public class ZadanieDao {
 			PreparedStatement ps = connection.prepareStatement(
 					"INSERT INTO `zadanie` (`id`, `opis`, `doswiadczenie`, `zleceniodawca`, `id_pracownika`, `status`, `id_sprint`) "
 					+ "VALUES "
-					+ "(NULL, ?, ?, ?, NULL, ?, ?)"
+					+ "(NULL, ?, ?, ?, ?, ?, ?)"
 					);
 			
 			
 			ps.setString(1, zadanie.getOpis());
 			ps.setInt(2, zadanie.getDoswiadczenie());
 			ps.setString(3, zadanie.getZleceniodawca());
-			ps.setInt(4, zadanie.getStatus());
-			ps.setInt(5, zadanie.getIdSprintu());
+			ps.setInt(4, zadanie.getIpPracownika());
+			ps.setInt(5, zadanie.getStatus());
+			ps.setInt(6, zadanie.getIdSprintu());
 						
 			ps.executeUpdate(); 
 			

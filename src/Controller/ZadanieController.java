@@ -75,7 +75,7 @@ public class ZadanieController extends HttpServlet {
 			request.setAttribute("zadania", dao.getZadaniaAll());
 			break;
 			
-		case "getSprintsList":
+		case "getSprintsPracownikList":
 			
 			showAllParams(request);
 			
@@ -83,16 +83,24 @@ public class ZadanieController extends HttpServlet {
 			
 			SprintDao dao = new SprintDao();
 			List<Sprint> sprinty = new ArrayList<Sprint>();
-			
 			System.out.println("LIST SPRINTY: ");
-			
 			sprinty =  dao.getSprintAll();
-			
 			for (Sprint sprint : sprinty) {
 				System.out.println(sprint);
 			}
 			
 			request.setAttribute("sprinty", sprinty);
+			
+			
+			PracownikDao pracownikDao = new PracownikDao();
+			List<Pracownik> pracownicy = new ArrayList<Pracownik>();
+			System.out.println("LIST Pracownicy: ");
+			pracownicy =  pracownikDao.getAllPracownik();
+			for (Pracownik pracownik : pracownicy) {
+				System.out.println(pracownik);
+			}
+			
+			request.setAttribute("pracownicy", pracownicy);
 			
 			break;
 		default:
@@ -127,7 +135,7 @@ public class ZadanieController extends HttpServlet {
 		//zadanie = new Zadanie(0, request.getParameter("opis"), Integer.parseInt(request.getParameter("doswiadczenie")), request.getParameter("zleceniodawca"), 0, 0);
 		
 
-		zadanie = new Zadanie(0, request.getParameter("opis"), Integer.parseInt(request.getParameter("doswiadczenie")), request.getParameter("zleceniodawca"), 0, "", 0, 1, "", "");
+		zadanie = new Zadanie(0, request.getParameter("opis"), Integer.parseInt(request.getParameter("doswiadczenie")), request.getParameter("zleceniodawca"), Integer.parseInt(request.getParameter("pracownikID")), "", 0, 1, "", "");
 		dao = new ZadanieDao();
 		
 		boolean result = dao.addZadanie(zadanie);

@@ -40,11 +40,22 @@
 										</div>
 									</div>
 									
+									<div class="control-group">
+										<label class="control-label" for="selectError3">Pracownik</label>
+										<div class="controls">
+											<select id="selectError3" name="pracownikID">
+											<option></option>
+											<c:forEach items="${pracownicy}" var="pracownik">
+												<option value="${pracownik.id}">${pracownik.login}</option>
+												</c:forEach>
+											</select>
+										</div>
+									</div>
 									
 									<div class="control-group">
 										<label class="control-label" for="selectError3">Sprint</label>
 										<div class="controls">
-											<select id="selectError3">
+											<select id="selectError3" name="sprint">
 											<c:forEach items="${sprinty}" var="sprint">
 												<option>${sprint.id}: ${sprint.poczatek} - ${sprint.koniec} </option>
 												</c:forEach>
