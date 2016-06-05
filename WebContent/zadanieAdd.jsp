@@ -57,7 +57,7 @@
 										<div class="controls">
 											<select id="selectError3" name="sprint">
 											<c:forEach items="${sprinty}" var="sprint">
-												<option>${sprint.id}: ${sprint.poczatek} - ${sprint.koniec} </option>
+												<option value="${sprint.id}">${sprint.id}: ${sprint.poczatek} - ${sprint.koniec} </option>
 												</c:forEach>
 											</select>
 										</div>
