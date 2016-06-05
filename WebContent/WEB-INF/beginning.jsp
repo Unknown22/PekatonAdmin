@@ -35,6 +35,8 @@
 </head>
 
 <body>
+
+
 	<!-- start: Header -->
 	<%@ include file="navbar.jsp"%>
 	<!-- start: Header -->

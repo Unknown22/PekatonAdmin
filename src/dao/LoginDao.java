@@ -19,7 +19,7 @@ private Connection connection;
 		
 		try{  		              
 		PreparedStatement ps=connection.prepareStatement(  
-		    "select * from admin where id = '" + login.getId() + "' and login = '" + login.getLogin() + "' and haslo = '" + login.getPassword() + "'");  
+		    "select * from admin where login = '" + login.getLogin() + "' and haslo = '" + login.getPassword() + "'");  
 		 
 //		ps.setInt(1, login.getId());  
 //		ps.setString(2, login.getLogin());
