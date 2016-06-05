@@ -6,9 +6,6 @@
 			<!-- start: Content -->
 			<div id="content" class="span10">
 
-				<ul class="breadcrumb">
-					<li><i class="icon-bar-chart"></i> <a href="#">Ogolne</a></li>
-				</ul>
 
 				<div class="row-fluid">
 
@@ -53,7 +50,7 @@
 						</div>
 						<div class="title">sprintow</div>
 						<div class="footer">
-							<a href="#">Zobacz</a>
+							<a href="indexSprinty.jsp">Zobacz</a>
 						</div>
 					</div>
 					

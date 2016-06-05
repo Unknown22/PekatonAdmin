@@ -35,7 +35,7 @@ public class PracownikDao {
 													rs.getString("haslo"),
 													rs.getString("stanowisko"),
 													rs.getInt("doswiadczenie"),
-													new SimpleDateFormat("dd/MM/yyyy").format(rs.getTimestamp("data_zatrudnienia")) 
+													new SimpleDateFormat("yyyy-MM-dd").format(rs.getTimestamp("data_zatrudnienia")) 
 													);
 
 				pracownicy.add(pracownik);
@@ -67,7 +67,7 @@ public class PracownikDao {
 											rs.getString("haslo"),
 											rs.getString("stanowisko"),
 											rs.getInt("doswiadczenie"),
-											new SimpleDateFormat("dd/MM/yyyy").format(rs.getTimestamp("data_zatrudnienia")) 
+											new SimpleDateFormat("yyyy-MM-dd").format(rs.getTimestamp("data_zatrudnienia")) 
 													);
 
 			}

@@ -83,7 +83,21 @@ public class utils {
 		/*
 		 * select COUNT(*) from sprint
 		 */
-		return 2;
+		
+		int value = 0;
+		try {
+
+			Statement statement = connection.createStatement();
+			ResultSet rs = statement.executeQuery("select COUNT(*) from sprint");
+			while (rs.next()) {
+				value = rs.getInt(1);
+			}
+		} catch (SQLException e) {
+			System.out.println("Blad przy pobieraniu liczby sprintow");
+//			e.printStackTrace();
+			return value;
+		}
+		return value;
 	}
 	
 }

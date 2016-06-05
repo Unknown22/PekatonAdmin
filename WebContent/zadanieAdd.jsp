@@ -40,20 +40,18 @@
 										</div>
 									</div>
 									
-									<!--  
+									
 									<div class="control-group">
-										<label class="control-label" for="selectError3">Plain Select</label>
+										<label class="control-label" for="selectError3">Sprint</label>
 										<div class="controls">
 											<select id="selectError3">
-												<option>Option 1</option>
-												<option>Option 2</option>
-												<option>Option 3</option>
-												<option>Option 4</option>
-												<option>Option 5</option>
+											<c:forEach items="${sprinty}" var="sprint">
+												<option>${sprint.id}: ${sprint.poczatek} - ${sprint.koniec} </option>
+												</c:forEach>
 											</select>
 										</div>
 									</div>
-									-->
+									
 									<div class="form-actions">
 										<button type="submit" class="btn btn-primary">Zapisz</button>
 										<button class="btn">Anuluj</button>

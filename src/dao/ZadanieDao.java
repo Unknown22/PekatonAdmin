@@ -146,8 +146,8 @@ public class ZadanieDao {
 				ResultSet rs2 = statement2.executeQuery("SELECT * FROM sprint WHERE id =" + rs.getInt("id_sprint") + ";");
 				
 				while(rs2.next()){
-					zadanie.setPoczatekSprintu(new SimpleDateFormat("dd/MM/yyyy").format(rs2.getTimestamp("poczatek")));
-					zadanie.setKoniecSprintu(new SimpleDateFormat("dd/MM/yyyy").format(rs2.getTimestamp("koniec")));
+					zadanie.setPoczatekSprintu(new SimpleDateFormat("yyyy-MM-dd").format(rs2.getTimestamp("poczatek")));
+					zadanie.setKoniecSprintu(new SimpleDateFormat("yyyy-MM-dd").format(rs2.getTimestamp("koniec")));
 				}
 				
 				rs2 = statement2.executeQuery("SELECT * FROM pracownik WHERE id =" + rs.getInt("id_pracownika") + ";");
@@ -190,8 +190,8 @@ public class ZadanieDao {
 				ResultSet rs2 = statement2.executeQuery("SELECT * FROM sprint WHERE id =" + rs.getInt("id_sprint") + ";");
 				
 				while(rs2.next()){
-					zadanie.setPoczatekSprintu(new SimpleDateFormat("dd/MM/yyyy").format(rs2.getTimestamp("poczatek")));
-					zadanie.setKoniecSprintu(new SimpleDateFormat("dd/MM/yyyy").format(rs2.getTimestamp("koniec")));
+					zadanie.setPoczatekSprintu(new SimpleDateFormat("yyyy-MM-dd").format(rs2.getTimestamp("poczatek")));
+					zadanie.setKoniecSprintu(new SimpleDateFormat("yyyy-MM-dd").format(rs2.getTimestamp("koniec")));
 				}
 				rs2 = statement2.executeQuery("SELECT * FROM pracownik WHERE id =" + rs.getInt("id_pracownika") + ";");
 				while(rs2.next()){
@@ -232,8 +232,8 @@ public class ZadanieDao {
 				ResultSet rs2 = statement2.executeQuery("SELECT * FROM sprint WHERE id =" + rs.getInt("id_sprint") + ";");
 				
 				while(rs2.next()){
-					zadanie.setPoczatekSprintu(new SimpleDateFormat("dd/MM/yyyy").format(rs2.getTimestamp("poczatek")));
-					zadanie.setKoniecSprintu(new SimpleDateFormat("dd/MM/yyyy").format(rs2.getTimestamp("koniec")));
+					zadanie.setPoczatekSprintu(new SimpleDateFormat("yyyy-MM-dd").format(rs2.getTimestamp("poczatek")));
+					zadanie.setKoniecSprintu(new SimpleDateFormat("yyyy-MM-dd").format(rs2.getTimestamp("koniec")));
 				}
 				rs2 = statement2.executeQuery("SELECT * FROM pracownik WHERE id =" + rs.getInt("id_pracownika") + ";");
 				while(rs2.next()){

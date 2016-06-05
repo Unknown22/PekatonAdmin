@@ -6,9 +6,6 @@
 			<!-- start: Content -->
 			<div id="content" class="span10">
 			
-				<ul class="breadcrumb">
-					<li><i class="icon-user"></i> <a href="#">Pracownicy</a></li>
-				</ul>
 
 				<div class="row-fluid sortable">
 					<div class="box span12">
@@ -27,7 +24,7 @@
 										<th>Login</th>
 										<th>Haslo</th>
 										<th>Stanowisko</th>
-										<th>Doswiadczenie</th>
+										<th>Data zatrudnienia</th>
 										<th>Akcje</th>
 									</tr>
 								</thead>
@@ -39,6 +36,7 @@
 										<td class="center"><c:out value="${pracownik.login}" /></td>
 										<td class="center"><c:out value="${pracownik.haslo}" /></td>
 										<td class="center"><c:out value="${pracownik.stanowisko}" /></td>
+										<td class="center"><c:out value="${pracownik.dataZatrudnienia}" /></td>
 										<td class="center">
 											<a class="btn btn-success" href="#">
 												<i class="halflings-icon white zoom-in"></i>

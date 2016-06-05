@@ -162,7 +162,7 @@ public class ZadanieDaoTest {
 		System.out.println("***TEST - addZadanie ");
 
 		ZadanieDao dao = new ZadanieDao();
-		Zadanie zadanie = new Zadanie(0, "Opis Testowy", 2, "Krzyzszof", 0, "", 0, 1, "", "");
+		Zadanie zadanie = new Zadanie(0, "Opis Testowy111", 2, "Krzyzszof111", 0, "", 0, 1, "", "");
 
 		boolean result = dao.addZadanie(zadanie);
 
