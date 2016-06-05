@@ -50,6 +50,16 @@ public class ZadanieController extends HttpServlet {
 		System.out.println("ZadanieController - action:"  + action);
 		dao = new ZadanieDao();
 		
+		System.out.println("\nPassed parameters:");
+		Enumeration<String> paramNames = request.getParameterNames();
+	
+		while (paramNames.hasMoreElements()) {
+			String paramName = (String) paramNames.nextElement();
+			System.out.print(paramName + ": ");
+			String paramValue = request.getParameter(paramName);
+			System.out.println(paramValue);
+		}
+		
 		switch (action) {
 		case "listZadania":
 			forward = PAGE_ZADANIA_LIST;
@@ -64,6 +74,21 @@ public class ZadanieController extends HttpServlet {
 			}
 			
 			request.setAttribute("zadania", zadania);
+			
+			break;
+		case "zeSprintu":
+			forward = PAGE_ZADANIA_LIST;
+			List<Zadanie> zadania1 = new ArrayList<Zadanie>();
+			int id1 = Integer.parseInt(request.getParameter("idS"));
+			System.out.println("LIST SPrintu: ");
+			
+			zadania1 =  dao.getZadaniaBySprint(id1);
+			
+			for (Zadanie zadanie : zadania1) {
+				System.out.println(zadanie);
+			}
+			
+			request.setAttribute("zadania", zadania1);
 			
 			break;
 		case "deleteZadanie":

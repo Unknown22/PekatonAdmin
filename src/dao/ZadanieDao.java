@@ -253,6 +253,52 @@ public class ZadanieDao {
 
 	}
 	
+	
+public List<Zadanie> getZadaniaBySprint(int id) {
+		
+		List<Zadanie> zadania = new ArrayList<Zadanie>();
+
+		try {
+			Statement statement = connection.createStatement();
+			ResultSet rs = statement.executeQuery("SELECT * FROM zadanie where id_sprint = " + id  );
+
+			while (rs.next()) {
+				Zadanie zadanie = new Zadanie(rs.getInt("id"), 
+												rs.getString("opis"), 
+												rs.getInt("doswiadczenie"),
+												rs.getString("zleceniodawca"), 
+												rs.getInt("id_pracownika"), 
+												"",
+												rs.getInt("status"),
+												rs.getInt("id_sprint"),
+												"",
+												""
+												);
+				Statement statement2 = connection.createStatement();
+				ResultSet rs2 = statement2.executeQuery("SELECT * FROM sprint WHERE id =" + rs.getInt("id_sprint") + ";");
+				
+				while(rs2.next()){
+					zadanie.setPoczatekSprintu(new SimpleDateFormat("yyyy-MM-dd").format(rs2.getTimestamp("poczatek")));
+					zadanie.setKoniecSprintu(new SimpleDateFormat("yyyy-MM-dd").format(rs2.getTimestamp("koniec")));
+				}
+				rs2 = statement2.executeQuery("SELECT * FROM pracownik WHERE id =" + rs.getInt("id_pracownika") + ";");
+				while(rs2.next()){
+					zadanie.setPracownik(rs2.getString("login"));
+				}
+				
+				zadania.add(zadanie);
+			}
+
+		} catch (SQLException e) {
+			System.err.println("Blad przy pobieraniu zadan sprintu " + id);
+			return zadania;
+		}
+		return zadania;
+
+
+	}
+	
+	
 	public boolean verifyZadanie(int id){
 		try {
 			PreparedStatement ps = connection.prepareStatement(

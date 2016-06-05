@@ -35,7 +35,7 @@
 										<td class="center"><c:out value="${sprint.koniec}" /></td>
 
 										<td class="center">
-											<a class="btn btn-success" href="#">
+											<a class="btn btn-success" href="ZadanieController?action=zeSprintu&idS=${sprint.id}">
 												<i class="halflings-icon white zoom-in"></i>
 											</a> 
 											
